@@ -1,0 +1,12 @@
+---
+vlans:
+  - id: 10
+    name: DMZ
+  - id: 20
+    name: Internal
+  - id: 30
+    name: Sales
+  - id: 40
+    name: QA
+  - id: 50
+    name: Guest

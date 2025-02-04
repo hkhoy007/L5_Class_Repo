@@ -1,0 +1,87 @@
+2025-02-04 20:27:29,017 p=9309 u=coder n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2025-02-04 20:27:29,089 p=9309 u=coder n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: leaf1
+
+2025-02-04 20:27:29,090 p=9309 u=coder n=ansible | PLAY [Add VLANs to device(s)] *************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:27:29,090 p=9309 u=coder n=ansible | skipping: no hosts matched
+2025-02-04 20:27:29,090 p=9309 u=coder n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:28:40,536 p=9552 u=coder n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2025-02-04 20:28:40,587 p=9552 u=coder n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: leafs
+
+2025-02-04 20:28:40,588 p=9552 u=coder n=ansible | PLAY [Add VLANs to device(s)] *************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:28:40,588 p=9552 u=coder n=ansible | skipping: no hosts matched
+2025-02-04 20:28:40,588 p=9552 u=coder n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:30:28,998 p=9758 u=coder n=ansible | PLAY [Add VLANs to device(s)] *************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:30:29,035 p=9758 u=coder n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:30:29,684 p=9758 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:30:29,704 p=9758 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:30:29,709 p=9758 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:30:29,716 p=9758 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:30:30,491 p=9758 u=coder n=ansible | ok: [leaf2]
+2025-02-04 20:30:30,505 p=9758 u=coder n=ansible | ok: [leaf3]
+2025-02-04 20:30:30,508 p=9758 u=coder n=ansible | ok: [leaf4]
+2025-02-04 20:30:30,646 p=9758 u=coder n=ansible | ok: [leaf1]
+2025-02-04 20:30:30,667 p=9758 u=coder n=ansible | TASK [Add VLAN 10] ************************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:30:31,782 p=9758 u=coder n=ansible | changed: [leaf4]
+2025-02-04 20:30:31,789 p=9758 u=coder n=ansible | changed: [leaf3]
+2025-02-04 20:30:31,793 p=9758 u=coder n=ansible | changed: [leaf1]
+2025-02-04 20:30:31,801 p=9758 u=coder n=ansible | changed: [leaf2]
+2025-02-04 20:30:31,837 p=9758 u=coder n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:30:31,837 p=9758 u=coder n=ansible | leaf1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:30:31,837 p=9758 u=coder n=ansible | leaf2                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:30:31,837 p=9758 u=coder n=ansible | leaf3                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:30:31,838 p=9758 u=coder n=ansible | leaf4                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:30:31,936 p=9803 u=coder n=ansible | shutdown complete
+2025-02-04 20:30:31,936 p=9800 u=coder n=ansible | shutdown complete
+2025-02-04 20:30:31,936 p=9806 u=coder n=ansible | shutdown complete
+2025-02-04 20:30:31,937 p=9809 u=coder n=ansible | shutdown complete
+2025-02-04 20:37:42,223 p=10347 u=coder n=ansible | ERROR! the playbook: add_vlan_loop.yml could not be found
+2025-02-04 20:37:54,405 p=10404 u=coder n=ansible | PLAY [Add VLANs to device(s)] *************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:37:54,438 p=10404 u=coder n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:37:55,012 p=10404 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:37:55,023 p=10404 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:37:55,034 p=10404 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:37:55,057 p=10404 u=coder n=ansible | platform_type is set to eos
+2025-02-04 20:37:55,816 p=10404 u=coder n=ansible | ok: [leaf4]
+2025-02-04 20:37:55,818 p=10404 u=coder n=ansible | ok: [leaf2]
+2025-02-04 20:37:55,818 p=10404 u=coder n=ansible | ok: [leaf3]
+2025-02-04 20:37:55,946 p=10404 u=coder n=ansible | ok: [leaf1]
+2025-02-04 20:37:55,969 p=10404 u=coder n=ansible | TASK [Add VLANs] **************************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:37:56,996 p=10404 u=coder n=ansible | ok: [leaf4] => (item={'id': 10, 'name': 'DMZ'})
+2025-02-04 20:37:57,024 p=10404 u=coder n=ansible | ok: [leaf1] => (item={'id': 10, 'name': 'DMZ'})
+2025-02-04 20:37:57,027 p=10404 u=coder n=ansible | ok: [leaf3] => (item={'id': 10, 'name': 'DMZ'})
+2025-02-04 20:37:57,031 p=10404 u=coder n=ansible | ok: [leaf2] => (item={'id': 10, 'name': 'DMZ'})
+2025-02-04 20:37:57,769 p=10404 u=coder n=ansible | ok: [leaf4] => (item={'id': 20, 'name': 'Internal'})
+2025-02-04 20:37:57,772 p=10404 u=coder n=ansible | ok: [leaf1] => (item={'id': 20, 'name': 'Internal'})
+2025-02-04 20:37:57,786 p=10404 u=coder n=ansible | ok: [leaf2] => (item={'id': 20, 'name': 'Internal'})
+2025-02-04 20:37:57,827 p=10404 u=coder n=ansible | ok: [leaf3] => (item={'id': 20, 'name': 'Internal'})
+2025-02-04 20:37:58,676 p=10404 u=coder n=ansible | changed: [leaf4] => (item={'id': 30, 'name': 'Sales'})
+2025-02-04 20:37:58,763 p=10404 u=coder n=ansible | changed: [leaf3] => (item={'id': 30, 'name': 'Sales'})
+2025-02-04 20:37:58,772 p=10404 u=coder n=ansible | changed: [leaf1] => (item={'id': 30, 'name': 'Sales'})
+2025-02-04 20:37:58,803 p=10404 u=coder n=ansible | changed: [leaf2] => (item={'id': 30, 'name': 'Sales'})
+2025-02-04 20:37:59,549 p=10404 u=coder n=ansible | changed: [leaf4] => (item={'id': 40, 'name': 'App1'})
+2025-02-04 20:37:59,632 p=10404 u=coder n=ansible | changed: [leaf1] => (item={'id': 40, 'name': 'App1'})
+2025-02-04 20:37:59,647 p=10404 u=coder n=ansible | changed: [leaf3] => (item={'id': 40, 'name': 'App1'})
+2025-02-04 20:37:59,694 p=10404 u=coder n=ansible | changed: [leaf2] => (item={'id': 40, 'name': 'App1'})
+2025-02-04 20:38:00,485 p=10404 u=coder n=ansible | changed: [leaf4] => (item={'id': 50, 'name': 'App2'})
+2025-02-04 20:38:00,543 p=10404 u=coder n=ansible | changed: [leaf1] => (item={'id': 50, 'name': 'App2'})
+2025-02-04 20:38:00,565 p=10404 u=coder n=ansible | changed: [leaf3] => (item={'id': 50, 'name': 'App2'})
+2025-02-04 20:38:00,620 p=10404 u=coder n=ansible | changed: [leaf2] => (item={'id': 50, 'name': 'App2'})
+2025-02-04 20:38:00,668 p=10404 u=coder n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************************************************
+2025-02-04 20:38:00,669 p=10404 u=coder n=ansible | leaf1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:38:00,669 p=10404 u=coder n=ansible | leaf2                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:38:00,669 p=10404 u=coder n=ansible | leaf3                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:38:00,669 p=10404 u=coder n=ansible | leaf4                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-04 20:38:30,480 p=10431 u=coder n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2025-02-04 20:38:30,537 p=10422 u=coder n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2025-02-04 20:38:30,561 p=10425 u=coder n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2025-02-04 20:38:30,583 p=10431 u=coder n=ansible | shutdown complete
+2025-02-04 20:38:30,615 p=10428 u=coder n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2025-02-04 20:38:30,639 p=10422 u=coder n=ansible | shutdown complete
+2025-02-04 20:38:30,662 p=10425 u=coder n=ansible | shutdown complete
+2025-02-04 20:38:30,716 p=10428 u=coder n=ansible | shutdown complete

@@ -4,4 +4,4 @@
   tasks:
     - name: Run pending tasks
       arista.cvp.cv_task_v3:
-        tasks: [40, 39, 41, 42]
+        tasks: [40, 43, 41, 42]

@@ -1,0 +1,8 @@
+To run a playbook in this dir, do the following...
+
+- Cd into the directory where ls allows you to see the inventory file. 
+- input the line below, make changes according to the required playbook...
+
+
+ansible-playbook -i inventory.yml playbooks/apply_configlets_MLAG.yml 
+

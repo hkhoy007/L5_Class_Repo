@@ -1,12 +1,20 @@
-- name: Configure Static Routes and Port-Channel1
-  hosts: 
-    - host1-DC2
-    - host1-DC2
+---
+# - name: setup of port-channel
+#   hosts: leaf1
+#   tasks:
+#     - name: Merge provided LAG attributes with existing device configuration
+#       arista.eos.eos_lag_interfaces:
+#         config:
+#           - name: Port-Channel1
+#             members:
+#               - member: Ethernet1, Ethernet2, Ethernet3, Ethernet4
+#                 mode: "on"
+#         state: merged
+
+- name: Static routes setup
+  hosts: leaf1
   tasks:
-
-
-    - name: Set static route for Host1-DC2
-      when: inventory_hostname == 'host1-DC2'
+    - name: Static route
       arista.eos.eos_static_routes:
         config:
           - vrf: default
@@ -14,54 +22,8 @@
               - afi: ipv4
                 routes:
                   - dest: 10.10.20.0/24
-                    next_hops:
+                    next_hop:
                       - forward_router_address: 10.10.10.1
                         interface: Port-Channel1
         state: merged
-
-    - name: Set static route for Host2-DC2
-      when: inventory_hostname == 'host1-DC2'
-      arista.eos.eos_static_routes:
-        config:
-          - vrf: default
-            address_families:
-              - afi: ipv4
-                routes:
-                  - dest: 10.10.10.0/24
-                    next_hops:
-                      - forward_router_address: 10.10.20.1
-                        interface: Port-Channel1
-        state: merged
-
-    - name: Create Port-Channel1 and add interfaces for dc1_host1
-      when: inventory_hostname == 'host1-DC2'
-      arista.eos.eos_portchannel:
-        name: Port-Channel1
-        mode: active
-        interfaces:
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
-        state:  merged
-
-    - name: Create Port-Channel1 and add interfaces for dc2_host2
-      when: inventory_hostname == 'host1-DC2'
-      arista.eos.eos_portchannel:
-        name: Port-Channel1
-        mode: active
-        interfaces:
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
-        state:  merged
-
-- name: Save config
-  hosts: host1-DC2, host2-DC2
-  tasks:
-  - name: copy run start
-    arista.eos.command:
-      commands:
-        - 'copy run start'
 

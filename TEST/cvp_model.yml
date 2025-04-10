@@ -1,0 +1,43 @@
+# path: "{{lookup('env','PWD')}}" 
+
+# CVP_CONFIGLETS_EXAMPLE:
+#   eBGP-Underlay-spine1-DC1: "{{lookup('file','{{path}}/configlets/eBGP-VXLAN/eBGP_underlay_spine1-DC1.cfg')}}"
+
+# CVP_DEVICES_eBGP:
+#   - fqdn: 'leaf1-DC1'
+#     parentContainerName: 'Left-DC1'
+#     configlets:
+#       - 'ATD-INFRA'
+#       - 'leaf1-DC1-BASE'
+#       - 'MLAG-Left'
+#       - 'eBGP-Underlay-leaf1-DC1'
+
+---
+path: "{{lookup('env','PWD')}}"
+
+
+CVP_CONFIGLETS:
+  MLAG-Left: "{{ lookup('file','{{path}}/configs/MLAG-Left.cfg') }}"
+  MLAG-Right: "{{ lookup('file','{{path}}/configs/MLAG-Right.cfg') }}"
+
+CVP_CONTAINERS:
+  DC2:
+    parentContainerName: Tenant
+
+CVP_DEVICES_MLAG:
+  - fqdn: 'leaf1-DC2'
+    parentContainerName: 'Leaf-DC2'
+    configlets:
+      - 'MLAG-Left'
+  - fqdn: 'leaf2-DC2'
+    parentContainerName: 'Leaf-DC2'
+    configlets:
+      - 'MLAG-Right'
+  - fqdn: 'leaf3-DC2'
+    parentContainerName: 'Leaf-DC2'
+    configlets:
+      - 'MLAG-Left'
+  - fqdn: 'leaf4-DC2'
+    parentContainerName: 'Leaf-DC2'
+    configlets:
+      - 'MLAG-Right'

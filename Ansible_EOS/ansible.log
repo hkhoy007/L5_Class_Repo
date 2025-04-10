@@ -85,3 +85,52 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2025-02-04 20:38:30,639 p=10422 u=coder n=ansible | shutdown complete
 2025-02-04 20:38:30,662 p=10425 u=coder n=ansible | shutdown complete
 2025-02-04 20:38:30,716 p=10428 u=coder n=ansible | shutdown complete
+2025-04-10 14:55:08,352 p=846 u=coder n=ansible | ERROR! the playbook: playbooks/add_vlans.yml could not be found
+2025-04-10 14:55:52,219 p=1329 u=coder n=ansible | PLAY [Add VLANs to device(s)] **************************************************************************************************************************
+2025-04-10 14:55:52,295 p=1329 u=coder n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2025-04-10 14:55:52,897 p=1329 u=coder n=ansible | platform_type is set to eos
+2025-04-10 14:55:52,954 p=1329 u=coder n=ansible | platform_type is set to eos
+2025-04-10 14:55:52,974 p=1329 u=coder n=ansible | platform_type is set to eos
+2025-04-10 14:55:52,975 p=1329 u=coder n=ansible | platform_type is set to eos
+2025-04-10 14:55:53,808 p=1329 u=coder n=ansible | ok: [leaf2]
+2025-04-10 14:55:53,816 p=1329 u=coder n=ansible | ok: [leaf1]
+2025-04-10 14:55:53,857 p=1329 u=coder n=ansible | ok: [leaf4]
+2025-04-10 14:55:53,897 p=1329 u=coder n=ansible | ok: [leaf3]
+2025-04-10 14:55:53,922 p=1329 u=coder n=ansible | TASK [Add VLAN 10] *************************************************************************************************************************************
+2025-04-10 14:55:55,099 p=1329 u=coder n=ansible | changed: [leaf1]
+2025-04-10 14:55:55,123 p=1329 u=coder n=ansible | changed: [leaf2]
+2025-04-10 14:55:55,126 p=1329 u=coder n=ansible | changed: [leaf3]
+2025-04-10 14:55:55,126 p=1329 u=coder n=ansible | changed: [leaf4]
+2025-04-10 14:55:55,165 p=1329 u=coder n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2025-04-10 14:55:55,165 p=1329 u=coder n=ansible | leaf1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 14:55:55,165 p=1329 u=coder n=ansible | leaf2                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 14:55:55,165 p=1329 u=coder n=ansible | leaf3                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 14:55:55,165 p=1329 u=coder n=ansible | leaf4                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 14:55:55,263 p=1365 u=coder n=ansible | shutdown complete
+2025-04-10 14:55:55,263 p=1371 u=coder n=ansible | shutdown complete
+2025-04-10 14:55:55,264 p=1368 u=coder n=ansible | shutdown complete
+2025-04-10 14:55:55,264 p=1374 u=coder n=ansible | shutdown complete
+2025-04-10 15:04:16,768 p=1607 u=coder n=ansible | PLAY [Add VLANs to device(s)] **************************************************************************************************************************
+2025-04-10 15:04:16,806 p=1607 u=coder n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2025-04-10 15:04:17,420 p=1607 u=coder n=ansible | platform_type is set to eos
+2025-04-10 15:04:17,427 p=1607 u=coder n=ansible | platform_type is set to eos
+2025-04-10 15:04:17,436 p=1607 u=coder n=ansible | platform_type is set to eos
+2025-04-10 15:04:17,470 p=1607 u=coder n=ansible | platform_type is set to eos
+2025-04-10 15:04:18,269 p=1607 u=coder n=ansible | ok: [leaf2]
+2025-04-10 15:04:18,273 p=1607 u=coder n=ansible | ok: [leaf3]
+2025-04-10 15:04:18,274 p=1607 u=coder n=ansible | ok: [leaf4]
+2025-04-10 15:04:18,427 p=1607 u=coder n=ansible | ok: [leaf1]
+2025-04-10 15:04:18,449 p=1607 u=coder n=ansible | TASK [Add VLAN 10] *************************************************************************************************************************************
+2025-04-10 15:04:19,632 p=1607 u=coder n=ansible | changed: [leaf2]
+2025-04-10 15:04:19,643 p=1607 u=coder n=ansible | changed: [leaf1]
+2025-04-10 15:04:19,697 p=1607 u=coder n=ansible | changed: [leaf4]
+2025-04-10 15:04:19,697 p=1607 u=coder n=ansible | changed: [leaf3]
+2025-04-10 15:04:19,736 p=1607 u=coder n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2025-04-10 15:04:19,736 p=1607 u=coder n=ansible | leaf1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 15:04:19,736 p=1607 u=coder n=ansible | leaf2                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 15:04:19,737 p=1607 u=coder n=ansible | leaf3                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 15:04:19,737 p=1607 u=coder n=ansible | leaf4                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-10 15:04:19,834 p=1631 u=coder n=ansible | shutdown complete
+2025-04-10 15:04:19,835 p=1637 u=coder n=ansible | shutdown complete
+2025-04-10 15:04:19,835 p=1653 u=coder n=ansible | shutdown complete
+2025-04-10 15:04:19,836 p=1628 u=coder n=ansible | shutdown complete

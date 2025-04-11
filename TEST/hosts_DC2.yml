@@ -1,19 +1,17 @@
 ---
-# - name: setup of port-channel
-#   hosts: leaf1
-#   tasks:
-#     - name: Merge provided LAG attributes with existing device configuration
-#       arista.eos.eos_lag_interfaces:
-#         config:
-#           - name: Port-Channel1
-#             members:
-#               - member: Ethernet1, Ethernet2, Ethernet3, Ethernet4
-#                 mode: "on"
-#         state: merged
-
-- name: Static routes setup
-  hosts: leaf1
+- name: setup of port-channel
+  hosts: leaf1 # Edit the host!!!
   tasks:
+    - name: Merge provided LAG attributes with existing device configuration
+      arista.eos.eos_lag_interfaces:
+        config:
+          - name: Port-Channel1
+            members:
+              - member: Ethernet1, Ethernet2, Ethernet3, Ethernet4
+                mode: "active"
+        state: merged
+
+
     - name: Static route
       arista.eos.eos_static_routes:
         config:
@@ -22,8 +20,79 @@
               - afi: ipv4
                 routes:
                   - dest: 10.10.20.0/24
-                    next_hop:
+                    next_hops:
                       - forward_router_address: 10.10.10.1
                         interface: Port-Channel1
         state: merged
 
+
+    - name: Assign Ip
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: Port-Channel1
+            ipv4:
+              - address: 10.10.10.11/24
+        state: merged
+
+
+    - name: L3 port
+      arista.eos.eos_interfaces:
+        config:
+          - name: Port-Channel1
+            enabled: true
+            mode: layer3
+        state: merged
+
+
+- name: setup of port-channel
+  hosts: leaf2 # Edit the host!!!
+  tasks:
+    - name: Merge provided LAG attributes with existing device configuration
+      arista.eos.eos_lag_interfaces:
+        config:
+          - name: Port-Channel1
+            members:
+              - member: Ethernet1, Ethernet2, Ethernet3, Ethernet4
+                mode: "active"
+        state: merged
+
+
+    - name: Static route
+      arista.eos.eos_static_routes:
+        config:
+          - vrf: default
+            address_families:
+              - afi: ipv4
+                routes:
+                  - dest: 10.10.10.0/24
+                    next_hops:
+                      - forward_router_address: 10.10.20.1
+                        interface: Port-Channel1
+        state: merged
+
+
+    - name: Assign Ip
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: Port-Channel1
+            ipv4:
+              - address: 10.10.20.12/24
+        state: merged
+
+
+    - name: L3 port
+      arista.eos.eos_interfaces:
+        config:
+          - name: Port-Channel1
+            enabled: true
+            mode: layer3
+        state: merged
+
+
+- name: Save config
+  hosts: Hosts
+  tasks:
+    - name: copy run start
+      arista.eos.command:
+        commands:
+          - 'copy run start'
